@@ -58,8 +58,8 @@ module.exports = function (element, options) {
     ghostElement.style.cssText += elementCssText
     ghostElement.innerHTML = escapeSpecialCharacters(string)
     // Copy the width of `ghostElement` to `element`.
-    var width = window.getComputedStyle(ghostElement).width
-    element.style.width = width
+    var width = ghostElement.offsetWidth
+    element.style.width = width + 'px'
     return width
   }
 
